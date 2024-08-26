@@ -5,8 +5,8 @@ const resultadoDiv = document.getElementById('resultado');
 function formatarTelefone(telefone) {
     let novoTelefone = '';
     for (let i = 0; i < telefone.length; i++) {
-        if (telefone[i] !== ' ' && telefone[i] !== '-') {
-            novoTelefone += telefone[i];
+        if (telefone[i] !== ' ' && telefone[i] !== '-' && telefone[i] !== '+') {
+            novoTelefone += `${telefone[i]}`;
         }
     }
     return novoTelefone;
@@ -15,6 +15,8 @@ function formatarTelefone(telefone) {
 botao.onclick = function () {
     // Obtém a lista de telefones e separa por linha
     const telefones = telefonesInput.value.split('\n');
+
+    console.log(telefones)
     
     // Limpa o conteúdo anterior
     resultadoDiv.innerHTML = '';
@@ -22,6 +24,6 @@ botao.onclick = function () {
     // Formata cada telefone e exibe no div de resultado
     telefones.forEach(telefone => {
         const telefoneFormatado = formatarTelefone(telefone);
-        resultadoDiv.innerHTML += `${telefoneFormatado}<br>`;
+        resultadoDiv.innerHTML += `${telefoneFormatado}`;
     });
 };
