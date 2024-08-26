@@ -16,7 +16,6 @@ botao.onclick = function () {
     // Obtém a lista de telefones e separa por linha
     const telefones = telefonesInput.value.split('\n');
 
-    console.log(telefones)
     
     // Limpa o conteúdo anterior
     resultadoDiv.innerHTML = '';
